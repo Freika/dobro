@@ -8,6 +8,12 @@
   <div class="post">
     <h2><%= link_to nice_russian_date(post.created_at), post %></h2>
     <div class="content">
+    <% if post.status == 'weekly' %>
+      Итоги недели
+    <% end %>
+    <% if post.status == 'monthly' %>
+      Итоги месяца
+    <% end %>
       <p>
         <%= markdown post.content %>
       </p>
