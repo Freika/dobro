@@ -66,6 +66,7 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kramdown (1.4.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
@@ -141,6 +142,7 @@ DEPENDENCIES
   jbuilder (= 2.2.5)
   jquery-rails (= 3.1.2)
   kaminari (= 0.16.1)
+  kramdown
   pg
   rails (= 4.1.8)
   russian

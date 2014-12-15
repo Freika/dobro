@@ -1,14 +1,17 @@
+<% unless current_user.posts.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day).nil? %>
+  <%= link_to 'Редактировать последнюю запись', edit_post_path(current_user.posts.last) %>
+<% else %>
+  <%= link_to 'Новая запись', new_post_path %>
+<% end %>
+
 <% @posts.each do |post| %>
   <div class="post">
-    <h2><%= nice_russian_date(post.created_at) %></h2>
+    <h2><%= link_to nice_russian_date(post.created_at), post %></h2>
     <div class="content">
       <p>
-        <%= post.content %>
+        <%= markdown post.content %>
       </p>
     </div>
   </div>
 
 <% end %>
-<br>
-
-<%= link_to 'Новая запись', new_post_path %>

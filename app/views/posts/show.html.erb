@@ -5,7 +5,7 @@
 </p>
 
 <p>
-  <%= @post.content %>
+  <%= markdown @post.content %>
 </p>
 
 <%= link_to 'Редактировать', edit_post_path(@post) %> |

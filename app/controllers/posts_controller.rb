@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.order(created_at: :desc)
     respond_with(@posts)
   end
 

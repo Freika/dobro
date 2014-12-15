@@ -39,3 +39,4 @@ gem 'devise', '3.4.1'
 
 gem 'simple_form'
 gem 'russian'
+gem 'kramdown'
