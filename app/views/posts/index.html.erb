@@ -1,8 +1,4 @@
-<% unless current_user.posts.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day).nil? %>
-  <%= link_to 'Редактировать последнюю запись', edit_post_path(current_user.posts.last) %>
-<% else %>
-  <%= link_to 'Новая запись', new_post_path %>
-<% end %>
+<%= link_to 'Новая запись', new_post_path %>
 
 <% @posts.each do |post| %>
   <div class="post">
