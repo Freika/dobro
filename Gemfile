@@ -40,3 +40,8 @@ gem 'devise', '3.4.1'
 gem 'simple_form'
 gem 'russian'
 gem 'kramdown'
+
+group :production do
+  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'unicorn'
+end

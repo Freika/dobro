@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/capistrano/capistrano.git
+  revision: 96a16ad3cac569237215f3c06553e49173a7ee01
+  ref: 96a16
+  specs:
+    capistrano (2.12.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,6 +66,7 @@ GEM
       sass (~> 3.2)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
+    highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.5)
@@ -66,12 +79,20 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.9.2)
     kramdown (1.4.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     minitest (5.5.0)
     multi_json (1.10.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     orm_adapter (0.5.0)
     pg (0.17.1)
     rack (1.5.2)
@@ -92,6 +113,7 @@ GEM
       activesupport (= 4.1.8)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.13.0)
     rake (10.4.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -125,6 +147,10 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -134,6 +160,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.9)
   bootstrap-sass (= 3.3.1.0)
+  capistrano!
   coffee-rails (= 4.1.0)
   devise (= 3.4.1)
   figaro (= 1.0.0)
@@ -151,3 +178,4 @@ DEPENDENCIES
   turbolinks (= 2.5.2)
   tzinfo-data
   uglifier (= 2.5.3)
+  unicorn
