@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
     if Date.today.wday == 6 || Date.today.wday == 0
       self.status = 'weekly'
     end
-    if Date.today.day.include?(25..31)
+    if Date.today.day.includes?(25..31)
       self.status = 'monthly'
     end
   end
