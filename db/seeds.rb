@@ -3,10 +3,10 @@
 
 # Temporary admin account
 u = User.new(
-    username: "admin",
-    email: "admin@example.com",
-    password: "1234",
-    password_confirmation: "1234",
+    username: "Frey",
+    email: "frey@list.ru",
+    password: "00000000",
+    password_confirmation: "00000000",
     admin: true
 )
 u.skip_confirmation!

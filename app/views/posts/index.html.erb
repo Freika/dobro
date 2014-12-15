@@ -1,0 +1,14 @@
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2><%= nice_russian_date(post.created_at) %></h2>
+    <div class="content">
+      <p>
+        <%= post.content %>
+      </p>
+    </div>
+  </div>
+
+<% end %>
+<br>
+
+<%= link_to 'Новая запись', new_post_path %>

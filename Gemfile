@@ -36,3 +36,6 @@ gem 'pg'
 
 # Devise: https://github.com/plataformatec/devise
 gem 'devise', '3.4.1'
+
+gem 'simple_form'
+gem 'russian'
