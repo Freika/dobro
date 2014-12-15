@@ -2,7 +2,7 @@
 
 <p>
   <h2><%= nice_russian_date(@post.created_at) %></h2>
-  <small><%= @post.status %></small>
+  <%= status_label(@post) %>
 </p>
 
 <p>

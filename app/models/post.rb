@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   private
 
   def set_status
+    self.status = 'daily'
     if Date.today.wday == 6 || Date.today.wday == 0
       self.status = 'weekly'
     end

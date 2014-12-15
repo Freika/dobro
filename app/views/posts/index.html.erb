@@ -3,6 +3,7 @@
 <% @posts.each do |post| %>
   <div class="post">
     <h2><%= link_to nice_russian_date(post.created_at), post %></h2>
+    <%= status_label(post) %>
     <div class="content">
     <% if post.status == 'weekly' %>
       Итоги недели
