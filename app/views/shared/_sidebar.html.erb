@@ -1,3 +1,8 @@
 <div class="sidebar">
 <h3 class="text-center">Календарь</h3>
+  <% if current_user %>
+    <% last_week.each do |day| %>
+      <%= link_to nice_russian_date(day.created_at), day %>
+    <% end %>
+  <% end %>
 </div>

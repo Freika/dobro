@@ -14,4 +14,9 @@ module PostsHelper
       puts "There is no any status"
     end
   end
+
+  def last_week
+    current_user.posts.where('created_at > ?', Date.today.beginning_of_week)
+  end
+
 end
