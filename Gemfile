@@ -40,6 +40,7 @@ gem 'devise', '3.4.1'
 gem 'simple_form'
 gem 'russian'
 gem 'kramdown'
+gem 'slim-rails'
 
 group :production do
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
