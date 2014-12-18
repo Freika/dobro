@@ -1,9 +1,11 @@
 <%= link_to 'Новая запись', new_post_path %>
 
+
 <% @posts.each do |post| %>
+<% present post do |post_presenter| %>
   <div class="post">
     <h2><%= link_to nice_russian_date(post.created_at), post %></h2>
-    <%= status_label(post) %>
+    <%= post_presenter.status_label %>
     <div class="content">
     <% if post.status == 'weekly' %>
       Итоги недели
@@ -16,5 +18,5 @@
       </p>
     </div>
   </div>
-
+<% end %>
 <% end %>
