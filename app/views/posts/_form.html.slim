@@ -1,0 +1,8 @@
+= simple_form_for(@post) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :content, label: 'Как прошел день?', input_html: { rows: 10 }
+
+  .form-actions
+    = f.button :submit, 'Сохранить', class: 'btn btn-primary pull-right'

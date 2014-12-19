@@ -1,0 +1,9 @@
+#notice = notice
+
+p
+  h2 = nice_russian_date(@post.created_at)
+  = status_label(@post)
+  '
+  = link_to 'Редактировать', edit_post_path(@post)
+
+p = markdown @post.content

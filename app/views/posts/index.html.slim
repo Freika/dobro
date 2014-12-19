@@ -1,0 +1,13 @@
+= link_to 'Новая запись', new_post_path, class: 'btn btn-default'
+
+- @posts.each do |post|
+  - present post do |post_presenter|
+    .post
+      h2 = link_to nice_russian_date(post.created_at), post
+      = post_presenter.status_label
+      .content
+        - if post.status == 'weekly'
+          Итоги недели
+        - if post.status == 'monthly'
+          Итоги месяца
+        p = markdown post.content
