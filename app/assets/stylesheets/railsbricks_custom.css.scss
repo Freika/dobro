@@ -560,7 +560,11 @@ img {
 }
 //***********************************************************
 
-.body {
+#wrap {
   background-image: image-url('ruby-background.png');
   background-repeat: repeat;
+
+  .container#body {
+    background-color: $body-bg
+  }
 }

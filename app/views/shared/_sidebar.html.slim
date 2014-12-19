@@ -4,7 +4,7 @@
     h4 Неделя
     - if current_user
      ul.nav.nav-pills.nav-stacked
-      - last_week.reverse.each do |day|
+      - last_week.each do |day|
         li class=('active' if current_page? post_path(day.id))
           = link_to nice_russian_date(day.created_at), day
 

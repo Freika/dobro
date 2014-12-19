@@ -6,8 +6,6 @@ development:
   encoding: utf8
   database: dobro_development
   host: localhost
-  user: vagrant
-  password: vagrant
   pool: 5
   port: 5432
 
