@@ -5,6 +5,8 @@
     .post
       h2 = link_to nice_russian_date(post.created_at), post
       = post_presenter.status_label
+      - if current_user == post.user
+        = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вот так запросто удалить целый день?' }
       .content
         p = markdown post.content
 
