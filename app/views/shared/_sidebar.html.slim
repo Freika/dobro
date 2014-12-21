@@ -17,7 +17,7 @@
     div.tab-pane#month
       h4.text-center= Russian::strftime(Time.now, "%B")
       - if current_user
-        = calendar_for(last_month) do |t|
+        = calendar_for(last_month.to_a) do |t|
           = t.day(day_method: :created_at) do |day, posts|
             - if posts.first
               = link_to posts.first.created_at.day, posts.first
