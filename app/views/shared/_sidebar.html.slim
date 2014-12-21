@@ -16,9 +16,10 @@
             = link_to nice_russian_date(day.created_at), day
     div.tab-pane#month
       h4.text-center= Russian::strftime(Time.now, "%B")
-      = calendar_for(last_month) do |t|
-        = t.day(day_method: :created_at) do |day, posts|
-          - if posts.first
-            = link_to posts.first.created_at.day, posts.first
-          - else
-            = day.day
+      - if current_user
+        = calendar_for(last_month) do |t|
+          = t.day(day_method: :created_at) do |day, posts|
+            - if posts.first
+              = link_to posts.first.created_at.day, posts.first
+            - else
+              = day.day
