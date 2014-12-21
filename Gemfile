@@ -25,7 +25,7 @@ gem 'russian'
 gem 'kramdown'
 gem 'slim-rails'
 gem "watu_table_builder", :require => "table_builder", :git => "git://github.com/watu/table_builder.git"
-
+gem "httparty"
 
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
