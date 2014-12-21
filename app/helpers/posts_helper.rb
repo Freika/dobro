@@ -5,11 +5,11 @@ module PostsHelper
 
   def status_label(post)
     if post.status == 'daily'
-      content_tag(:span, 'Daily', class: 'label label-primary')
+      content_tag(:span, 'Итоги дня', class: 'label label-primary')
     elsif post.status == 'weekly'
-      content_tag(:span, 'Weekly', class: 'label label-info')
+      content_tag(:span, 'Итоги недели', class: 'label label-info')
     elsif post.status == 'monthly'
-      content_tag(:span, 'Monthly', class: 'label label-success')
+      content_tag(:span, 'Итоги месяца', class: 'label label-success')
     else
       puts "There is no any status"
     end

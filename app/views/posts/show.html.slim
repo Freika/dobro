@@ -7,3 +7,5 @@ p
   = link_to 'Редактировать', edit_post_path(@post)
 
 p = markdown @post.content
+
+- title nice_russian_date(@post.created_at)

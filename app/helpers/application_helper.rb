@@ -1,7 +1,7 @@
 module ApplicationHelper
   def title(value)
     unless value.nil?
-      @title = "#{value} | Dobro"
+      @title = "#{value} | Days"
     end
   end
 
@@ -21,4 +21,5 @@ module ApplicationHelper
     yield presenter if block_given?
     presenter
   end
+
 end

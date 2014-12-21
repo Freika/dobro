@@ -1,4 +1,4 @@
-= link_to 'Новая запись', new_post_path, class: 'btn btn-default'
+.text-center= link_to 'Новая запись', new_post_path, class: 'btn btn-success'
 
 - @posts.each do |post|
   - present post do |post_presenter|
@@ -7,3 +7,5 @@
       = post_presenter.status_label
       .content
         p = markdown post.content
+
+- title "Сворачивающиеся дневники #{current_user.username.capitalize}"

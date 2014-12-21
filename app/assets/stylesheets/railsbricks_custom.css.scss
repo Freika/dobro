@@ -2,11 +2,14 @@
 // BOOTSTRAP VARIABLES OVERRIDES
 
 // Color system
-$brand-primary: #428bca;
-$brand-success: #5cb85c;
-$brand-warning: #f0ad4e;
+$brand-primary: #00c3ff;
+// $brand-primary: #428bca;
+$brand-success: #00c300;
+$brand-warning: #ffc70e;
+// $brand-warning: #f0ad4e;
 $brand-danger: #d9534f;
-$brand-info: #5bc0de;
+$brand-info: #00c3ff;
+// $brand-info: #5bc0de;
 
 // Body scaffolding
 $body-bg: #ffffff;
@@ -561,8 +564,6 @@ img {
 //***********************************************************
 
 #wrap {
-  background-image: image-url('ruby-background.png');
-  background-repeat: repeat;
 
   .container#body {
     background-color: $body-bg
