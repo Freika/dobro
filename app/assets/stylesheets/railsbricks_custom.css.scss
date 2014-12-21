@@ -568,4 +568,13 @@ img {
   .container#body {
     background-color: $body-bg
   }
+
+  .tab-pane#month {
+    td {
+      border: 1px solid gray;
+      width: 37px;
+      height: 37px;
+      text-align: center;
+    }
+  }
 }

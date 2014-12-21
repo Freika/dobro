@@ -1,10 +1,24 @@
 .sidebar
   h3.text-center Календарь
-  .week.text-center
-    h4 Неделя
-    - if current_user
-     ul.nav.nav-pills.nav-stacked
-      - last_week.each do |day|
-        li class=('active' if current_page? post_path(day.id))
-          = link_to nice_russian_date(day.created_at), day
+  div role='tabpanel'
+    ul.nav.nav-tabs role='tablist'
+      li.active role='presentation'
+        a href='#week' aria-controls='week' role='tab' data-toggle='tab' Неделя
+      li role='presentation'
+        a href='#month' aria-controls='month' role='tab' data-toggle='tab' Месяц
 
+  .tab-content
+    div.tab-pane.active#week
+    - if current_user
+       ul.nav.nav-pills.nav-stacked
+        - last_week.each do |day|
+          li class=('active' if current_page? post_path(day.id))
+            = link_to nice_russian_date(day.created_at), day
+    div.tab-pane#month
+      h4.text-center= Russian::strftime(Time.now, "%B")
+      = calendar_for(last_month) do |t|
+        = t.day(day_method: :created_at) do |day, posts|
+          - if posts.first
+            = link_to posts.first.created_at.day, posts.first
+          - else
+            = day.day

@@ -162,6 +162,7 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
+    watu_table_builder (0.3.0)
 
 PLATFORMS
   ruby
@@ -189,3 +190,4 @@ DEPENDENCIES
   tzinfo-data
   uglifier (= 2.5.3)
   unicorn
+  watu_table_builder

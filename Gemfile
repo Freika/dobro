@@ -24,6 +24,8 @@ gem 'simple_form'
 gem 'russian'
 gem 'kramdown'
 gem 'slim-rails'
+gem "watu_table_builder", :require => "table_builder"
+
 
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
