@@ -3,8 +3,8 @@
 - @posts.each do |post|
   - present post do |post_presenter|
     .post
-      h2 = link_to nice_russian_date(post.created_at), post
-      = post_presenter.status_label
+      h2= link_to nice_russian_date(post.created_at), post
+      => post_presenter.status_label
       - if can? :destroy, Post
         = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вот так запросто удалить целый день?' }
       .content
