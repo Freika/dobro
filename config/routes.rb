@@ -6,11 +6,11 @@ Dobro::Application.routes.draw do
   get "inside", to: "pages#inside", as: "inside"
   get 'changelog', to: 'pages#changelog'
   devise_for :users
+  resources :users, only: [:edit]
 
   namespace :admin do
     root "base#index"
-    resources :users
-
+    resources :users, only: [:edit]
   end
 
 end
