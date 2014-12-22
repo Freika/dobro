@@ -57,12 +57,12 @@ class Admin::UsersController < Admin::BaseController
   def user_params
     params.require(:user).permit(
     :username,
+    :time_zone,
     :email,
     :password,
     :password_confirmation,
     :admin,
-    :locked,
-    :time_zone
+    :locked
     )
   end
 
