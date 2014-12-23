@@ -14,12 +14,12 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
     if current_user.posts.count > 0
       if current_user.posts.last.created_at.to_date == Time.zone.today
         redirect_to posts_path, notice: "Сегодня вы уже создавали запись ԅ[ •́ ﹏ •̀ ]و Если хотите что-то добавить, пожалуйста,отредактируйте вашу сегодняшнюю публикацию"
       end
     else
-      @post = Post.new
       respond_with(@post)
     end
   end

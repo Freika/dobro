@@ -25,12 +25,12 @@ module PostsHelper
 
   def new_post_or_update_today
     unless current_user.posts.count > 0
-      link_to 'Создать новый день?', new_post_path, class: 'btn btn-success'
+      link_to 'Добавить запись?', new_post_path, class: 'btn btn-success'
     else
       if current_user.posts.last.created_at.to_date == Time.zone.today
         link_to 'Отредактировать сегодняшний день?', edit_post_path(current_user.posts.last), class: 'btn btn-primary'
       else
-        link_to 'Создать новый день?', new_post_path, class: 'btn btn-success'
+        link_to 'Добавить запись?', new_post_path, class: 'btn btn-success'
       end
     end
   end
