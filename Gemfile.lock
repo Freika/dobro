@@ -196,7 +196,6 @@ DEPENDENCIES
   sass-rails (= 4.0.4)
   simple_form
   slim-rails
-  tzinfo-data
   uglifier (= 2.5.3)
   unicorn
   watu_table_builder!
