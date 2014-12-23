@@ -5,9 +5,9 @@
     .post
       h2= link_to nice_russian_date(post.created_at), post
       => post_presenter.status_label
-      - if can? :edit, Post
+      / -# if can? :edit, Post
         => link_to 'Редактировать', edit_post_path(post)
-      - if can? :destroy, Post
+      / -# if can? :destroy, Post
         = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вот так запросто удалить целый день? ໒( •́ ‸ •̀ )७' }
       .content
         p = markdown post.content
