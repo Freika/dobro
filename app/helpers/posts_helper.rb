@@ -23,4 +23,12 @@ module PostsHelper
     current_user.posts.where("created_at >= ? AND created_at <= ? ", Date.today.beginning_of_month, Date.today.end_of_month)
   end
 
+  def new_post_or_update_today
+    if current_user.posts.last.created_at.to_date == Time.zone.today
+      link_to 'Отредактировать сегодняшний день?', edit_post_path(current_user.posts.last), class: 'btn btn-primary'
+    else
+      link_to 'Создать новый день?', new_post_path, class: 'btn btn-success'
+    end
+  end
+
 end

@@ -11,9 +11,6 @@ gem 'jquery-rails', '3.1.2'
 gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
 
-# Necessary for Windows OS (won't install on *nix systems)
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
 gem 'kaminari', '0.16.1'
 gem 'friendly_id', '5.0.4'
 gem 'font-awesome-sass', '4.2.2'

@@ -1,4 +1,4 @@
-.text-center= link_to 'Новая запись', new_post_path, class: 'btn btn-success'
+.text-center= new_post_or_update_today
 
 - @posts.each do |post|
   - present post do |post_presenter|
