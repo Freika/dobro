@@ -1,6 +1,22 @@
 module PostsHelper
+
   def markdown(source)
     Kramdown::Document.new(source).to_html.html_safe
+  end
+
+  def available_post_types
+    options = ['Итоги дня']
+    if Time.zone.now.wday == 6 || Time.zone.now.wday == 0
+      options.push('Итоги недели')
+    end
+
+    if (28..31).include? Time.zone.now.day
+      options.push('Итоги месяца')
+    end
+
+    if Time.zone.now.month == 12
+      options.push('Итоги года')
+    end
   end
 
   def status_label(post)
