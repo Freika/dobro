@@ -4,8 +4,8 @@
     ul.nav.nav-tabs role='tablist'
       li.active role='presentation'
         a href='#week' aria-controls='week' role='tab' data-toggle='tab' Неделя
-      li role='presentation'
-        a href='#month' aria-controls='month' role='tab' data-toggle='tab' Месяц
+      / li role='presentation'
+      /   a href='#month' aria-controls='month' role='tab' data-toggle='tab' Месяц
 
   .tab-content
     div.tab-pane.active#week
@@ -14,8 +14,8 @@
         - last_week.each do |day|
           li class=('active' if current_page? post_path(day.id))
             = link_to nice_russian_date(day.created_at), day
-    div.tab-pane#month
-      h4.text-center= Russian::strftime(Time.now, "%B")
+    / div.tab-pane#month
+      / h4.text-center= Russian::strftime(Time.now, "%B")
       / - if current_user
       /   = calendar_for(last_month.to_a) do |t|
       /     = t.day(day_method: :created_at) do |day, posts|
