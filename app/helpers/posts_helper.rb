@@ -5,18 +5,19 @@ module PostsHelper
   end
 
   def available_post_types
-    options = ['Итоги дня']
+    options = {daily: 'Итоги дня'}
     if Time.zone.now.wday == 6 || Time.zone.now.wday == 0
-      options.push('Итоги недели')
+      options[:weekly] = 'Итоги недели'
     end
 
-    if (28..31).include? Time.zone.now.day
-      options.push('Итоги месяца')
+    if (25..31).include? Time.zone.now.day
+      options[:monthly] = 'Итоги месяца'
     end
 
     if Time.zone.now.month == 12
-      options.push('Итоги года')
+      options[:yearly] = 'Итоги года'
     end
+    options
   end
 
   def status_label(post)
