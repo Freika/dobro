@@ -17,6 +17,22 @@ module PostsHelper
     if Time.zone.now.month == 12
       options[:yearly] = 'Итоги года'
     end
+
+    if Time.zone.now.month == 2 && (25..31).include? Time.zone.now.day
+      options[:winter] = 'Итоги зимы'
+    end
+
+    if Time.zone.now.month == 5 && (25..31).include? Time.zone.now.day
+      options[:spring] = 'Итоги весны'
+    end
+
+    if Time.zone.now.month == 8 && (25..31).include? Time.zone.now.day
+      options[:summer] = 'Итоги лета'
+    end
+
+    if Time.zone.now.month == 11 && (25..31).include? Time.zone.now.day
+      options[:autumn] = 'Итоги осени'
+    end
     options
   end
 
@@ -27,6 +43,14 @@ module PostsHelper
       content_tag(:span, 'Итоги недели', class: 'label label-warning')
     elsif post.status == 'monthly'
       content_tag(:span, 'Итоги месяца', class: 'label label-success')
+    elsif post.status == 'winter'
+      content_tag(:span, 'Итоги зимы', class: 'label')
+    elsif post.status == 'spring'
+      content_tag(:span, 'Итоги весны', class: 'label')
+    elsif post.status == 'summer'
+      content_tag(:span, 'Итоги лета', class: 'label')
+    elsif post.status == 'autumn'
+      content_tag(:span, 'Итоги осени', class: 'label')
     else
       puts "There is no any status"
     end
