@@ -26,6 +26,7 @@ gem "httparty"
 gem 'cancancan', '~> 1.9'
 
 
+
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
   gem 'figaro', '1.0.0'
