@@ -56,4 +56,5 @@ class User < ActiveRecord::Base
   def self.users_count
     where("admin = ? AND locked = ?",false,false).count
   end
+
 end

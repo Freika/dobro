@@ -1,5 +1,7 @@
 .text-center= new_post_or_update_today
 
+.text-center= "Вы пишете уже #{current_user.streak} дней подряд"
+
 - @posts.each do |post|
   - present post do |post_presenter|
     .post
