@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Standard Rails gems
-gem 'rails', '4.1.8'
-gem 'sass-rails', '4.0.4'
-gem 'uglifier', '2.5.3'
-gem 'coffee-rails', '4.1.0'
+gem 'rails', '4.2'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '3.1.2'
-# gem 'turbolinks', '2.5.2'
 gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
+
 
 gem 'kaminari', '0.16.1'
 gem 'friendly_id', '5.0.4'
@@ -24,12 +24,17 @@ gem 'slim-rails'
 gem "watu_table_builder", :require => "table_builder", :git => "git://github.com/watu/table_builder.git"
 gem "httparty"
 gem 'cancancan', '~> 1.9'
+gem 'autoprefixer-rails'
 
 
 
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
   gem 'figaro', '1.0.0'
+  gem 'web-console', '~> 2.0'
+  gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+
 end
 
 group :production do

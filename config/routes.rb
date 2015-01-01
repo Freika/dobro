@@ -1,7 +1,7 @@
-Dobro::Application.routes.draw do
-  resources :posts
-
+Rails.application.routes.draw do
   root "pages#home"
+
+  resources :posts
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
   get 'changelog', to: 'pages#changelog'
@@ -12,5 +12,4 @@ Dobro::Application.routes.draw do
     root "base#index"
     resources :users, only: [:edit]
   end
-
 end
