@@ -10,7 +10,7 @@ RSpec.describe "Announcements", :type => :request do
       expect(page).to have_content('Hello World')
       expect(page).not_to have_content('Upcoming')
 
-      click_on 'hide announcement'
+      click_on 'Скрыть'
       expect(page).not_to have_content('Hello World')
     end
 
@@ -18,7 +18,7 @@ RSpec.describe "Announcements", :type => :request do
       Announcement.create! message: 'Hello World', starts_at: 1.hour.ago, ends_at: 1.hour.from_now
       visit root_path
       expect(page).to have_content('Hello World')
-      expect { click_on 'hide announcement' }.to_not change { page.response_headers }
+      expect { click_on 'Скрыть' }.to_not change { page.response_headers }
       expect(page).not_to have_content('Hello World')
     end
   end
