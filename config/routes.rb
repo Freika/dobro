@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "base#index"
     resources :users, only: [:edit]
+    get 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement'
   end
 end

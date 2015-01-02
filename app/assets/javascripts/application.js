@@ -15,3 +15,8 @@
 //= require bootstrap
 //= require common
 
+$(document).ready(function(){
+  $('.announcement .remove').click(function() {
+    $(this).parent('div').remove();
+  });
+});

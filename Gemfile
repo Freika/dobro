@@ -21,8 +21,8 @@ gem 'simple_form'
 gem 'russian'
 gem 'kramdown'
 gem 'slim-rails'
-gem "watu_table_builder", :require => "table_builder", :git => "git://github.com/watu/table_builder.git"
-gem "httparty"
+gem 'watu_table_builder', :require => 'table_builder', :git => 'git://github.com/watu/table_builder.git'
+gem 'httparty'
 gem 'cancancan', '~> 1.9'
 gem 'autoprefixer-rails'
 
@@ -34,7 +34,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
-
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'sprockets'
+  gem 'database_cleaner'
 end
 
 group :production do

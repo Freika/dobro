@@ -26,6 +26,12 @@
     </header>
 
     <div class="container" id="body">
+    <%- Announcement.current(cookies.signed[:hidden_announcement_ids]).each do |announcement| %>
+      <%= div_for(announcement, class: 'announcement-block') do %>
+        <%= announcement.message %>
+        <%= link_to 'hide announcement', admin_hide_announcement_path(announcement), class: 'remove', remote: true %>
+      <% end %>
+    <% end %>
 
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 text-center">

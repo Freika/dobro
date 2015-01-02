@@ -9,3 +9,10 @@ development:
   pool: 5
   port: 5432
 
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: dobro_test
+  host: localhost
+  pool: 5
+  port: 5432
