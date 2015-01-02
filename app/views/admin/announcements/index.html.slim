@@ -1,0 +1,12 @@
+h2 Все объявления
+
+table.table
+  tr
+    td Начало
+    td Конец
+    td Текст
+  - @announcements.each do |a|
+    tr
+      td= a.starts_at
+      td= a.ends_at
+      td= link_to a.message, edit_admin_announcement_path(a)
