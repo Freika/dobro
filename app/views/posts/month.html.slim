@@ -1,0 +1,5 @@
+.text-center
+  h3= "Итоги за #{Russian.strftime(Date.new(@year, @month), '%B %Y')} года"
+
+- @posts.each do |post|
+  = render 'post', post: post

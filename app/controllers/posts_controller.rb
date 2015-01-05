@@ -16,6 +16,22 @@ class PostsController < ApplicationController
     @posts = current_user.posts.weekly.where('created_at >= ?', Time.zone.today.beginning_of_month)
   end
 
+  def week
+    year = params[:year].to_i
+    week = params[:week].to_i
+    @week_start = Date.commercial(year, week, 1)
+    @week_end = Date.commercial(year, week, 7)
+    @posts = current_user.posts.where(created_at: @week_start..@week_end)
+  end
+
+  def month
+    @year = params[:year].to_i
+    @month = params[:month].to_i
+    @month_start = Date.new(@year, @month, 1)
+    @month_end = @month_start.end_of_month
+    @posts = current_user.posts.weekly.where(created_at: @month_start..@month_end)
+  end
+
   def show
     @post = set_post
     respond_with(@post)

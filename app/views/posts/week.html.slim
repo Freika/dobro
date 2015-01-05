@@ -1,0 +1,3 @@
+h3= "Итоги недели с #{nice_russian_date @week_start} по #{nice_russian_date @week_end}"
+- @posts.each do |post|
+  = render 'post', post: post
