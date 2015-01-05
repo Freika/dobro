@@ -20,4 +20,14 @@ RSpec.configure do |config|
       example.run
     end
   end
+  config.include FactoryGirl::Syntax::Methods
+end
+
+def sign_in_with(username, password)
+  visit root_path
+  click_link 'Войти'
+  fill_in 'Имя пользователя', with: username
+  fill_in 'Пароль', with: password
+
+  click_button 'Войти'
 end

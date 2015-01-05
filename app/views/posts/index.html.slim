@@ -1,19 +1,12 @@
-.text-center= new_post_or_update_today
-
+.text-center
+  = content_tag(:div, class: 'btn-group', role: 'group') do
+    = link_to 'Последняя неделя', last_week_path, class: 'btn btn-primary'
+    = new_post_or_update_today
+    = link_to 'Последний месяц', last_month_path, class: 'btn btn-primary'
 /.text-center= "Вы пишете уже #{current_user.streak} дней подряд"
 
 - @posts.each do |post|
-  - present post do |post_presenter|
-    .post
-      h2= link_to nice_russian_date(post.created_at), post
-      => post_presenter.status_label
-      / -# if can? :edit, Post
-        => link_to 'Редактировать', edit_post_path(post)
-      / -# if can? :destroy, Post
-        = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вот так запросто удалить целый день? ໒( •́ ‸ •̀ )७' }
-      .content
-        p = markdown post.content
-
+  = render 'post', post: post
 = paginate @posts
 
 - title "Сворачивающиеся дневники #{current_user.username.capitalize}"

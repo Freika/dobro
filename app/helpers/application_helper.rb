@@ -6,10 +6,10 @@ module ApplicationHelper
   end
 
   def nice_russian_date(date)
-    if date == Date.today
-      "Сегодня, #{Russian::strftime(date, '%e %B')}"
-    elsif date == Date.yesterday
-      "Вчера, #{Russian::strftime(date, '%e %B')}"
+    if date == Time.zone.today
+      "сегодня, #{Russian::strftime(date, '%e %B')}"
+    elsif date == Time.zone.yesterday
+      "вчера, #{Russian::strftime(date, '%e %B')}"
     else
       Russian::strftime(date, '%e %B %Y')
     end

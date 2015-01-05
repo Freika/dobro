@@ -8,6 +8,14 @@ class PostsController < ApplicationController
     respond_with(@posts)
   end
 
+  def last_week
+    @posts = current_user.posts.where('created_at >= ?', Time.zone.today.beginning_of_week)
+  end
+
+  def last_month
+    @posts = current_user.posts.weekly.where('created_at >= ?', Time.zone.today.beginning_of_month)
+  end
+
   def show
     @post = set_post
     respond_with(@post)

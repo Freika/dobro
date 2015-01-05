@@ -1,0 +1,3 @@
+h3= "Последняя неделя с #{nice_russian_date(Date.today.beginning_of_week)} по #{nice_russian_date(Date.today.end_of_week)}"
+- @posts.each do |post|
+  = render 'post', post: post

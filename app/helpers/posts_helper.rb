@@ -57,7 +57,7 @@ module PostsHelper
   end
 
   def last_week
-    current_user.posts.where('created_at > ?', Date.today.beginning_of_week).order(created_at: :desc)
+    current_user.posts.where('created_at >= ?', Date.today.beginning_of_week).order(created_at: :desc)
   end
 
   def last_month

@@ -1,0 +1,3 @@
+h3= "Итоги последнего месяца с #{nice_russian_date(Time.zone.today.beginning_of_month)} по #{nice_russian_date(Time.zone.today.end_of_month)}"
+- @posts.each do |post|
+  = render 'post', post: post

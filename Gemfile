@@ -38,6 +38,10 @@ group :development, :test do
   gem 'poltergeist'
   gem 'sprockets'
   gem 'database_cleaner'
+  gem 'timecop'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec', require: false
 end
 
 group :production do
