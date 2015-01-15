@@ -25,8 +25,7 @@ gem 'watu_table_builder', :require => 'table_builder', :git => 'git://github.com
 gem 'httparty'
 gem 'cancancan', '~> 1.9'
 gem 'autoprefixer-rails'
-
-
+gem 'bootstrap-datepicker-rails'
 
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do

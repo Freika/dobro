@@ -32,6 +32,10 @@ class PostsController < ApplicationController
     @posts = current_user.posts.weekly.where(created_at: @month_start..@month_end)
   end
 
+  def calendars
+
+  end
+
   def show
     @post = set_post
     respond_with(@post)
@@ -77,6 +81,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:content, :status)
+      params.require(:post).permit(:content, :status, :created_at)
     end
 end
