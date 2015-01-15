@@ -8,34 +8,6 @@ class PostsController < ApplicationController
     respond_with(@posts)
   end
 
-  def last_week
-    @posts = current_user.posts.where('created_at >= ?', Time.zone.today.beginning_of_week)
-  end
-
-  def last_month
-    @posts = current_user.posts.weekly.where('created_at >= ?', Time.zone.today.beginning_of_month)
-  end
-
-  def week
-    year = params[:year].to_i
-    week = params[:week].to_i
-    @week_start = Date.commercial(year, week, 1)
-    @week_end = Date.commercial(year, week, 7)
-    @posts = current_user.posts.where(created_at: @week_start..@week_end)
-  end
-
-  def month
-    @year = params[:year].to_i
-    @month = params[:month].to_i
-    @month_start = Date.new(@year, @month, 1)
-    @month_end = @month_start.end_of_month
-    @posts = current_user.posts.weekly.where(created_at: @month_start..@month_end)
-  end
-
-  def calendars
-
-  end
-
   def show
     @post = set_post
     respond_with(@post)
@@ -73,6 +45,35 @@ class PostsController < ApplicationController
     @post = set_post
     @post.destroy
     respond_with(@post)
+  end
+
+  def last_week
+    @posts = current_user.posts.where('created_at >= ?', Time.zone.today.beginning_of_week)
+  end
+
+  def last_month
+    @posts = current_user.posts.weekly.where('created_at >= ?', Time.zone.today.beginning_of_month)
+  end
+
+  def week
+    year = params[:year].to_i
+    week = params[:week].to_i
+    @week_start = Date.commercial(year, week, 1)
+    @week_end = Date.commercial(year, week, 7)
+    @posts = current_user.posts.where(created_at: @week_start..@week_end).order(created_at: :desc)
+  end
+
+  def month
+    @year = params[:year].to_i
+    @month = params[:month].to_i
+    @month_start = Date.new(@year, @month, 1)
+    @month_end = @month_start.end_of_month
+    @posts = current_user.posts.weekly.where(created_at: @month_start..@month_end)
+  end
+
+  def period
+    @weeks = current_user.posts.group_by { |post| post.created_at.strftime("%U") }
+    @months = current_user.posts.group_by { |post| post.created_at.strftime("%B") }
   end
 
   private

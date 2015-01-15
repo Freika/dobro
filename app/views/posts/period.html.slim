@@ -1,0 +1,11 @@
+.col-sm-6
+  h3 Просмотр записей по неделям
+  ul
+    - @weeks.each.with_index(1) do |week, number|
+      li= link_to "Неделя №#{number} 2015 года", "/posts/week/2015/#{number}"
+
+.col-sm-6
+  h3 Просмотр записей по месяцам
+  ul
+    - @months.each.with_index(1) do |month, number|
+      li= link_to "Месяц №#{number} 2015 года", "/posts/month/2015/#{number}"

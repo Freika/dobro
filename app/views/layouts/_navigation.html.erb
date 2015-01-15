@@ -12,7 +12,7 @@
     <ul class="nav navbar-nav">
       <li><%= link_to 'Дневник', posts_path %></li>
       <% if user_signed_in? %>
-        <li class='disabled'><%= link_to 'Календари', '#' %></li>
+        <li><%= link_to 'Календари', period_list_path %></li>
       <% end %>
     </ul>
     <div class="collapse navbar-collapse">

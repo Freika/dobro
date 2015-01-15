@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'posts/period/last_month', to: 'posts#last_month', as: 'last_month'
   get 'posts/week/:year/:week', to: 'posts#week', as: 'week'
   get 'posts/month/:year/:month', to: 'posts#month', as: 'month'
+  get 'posts/period/weeks', to: 'posts#period', as: 'period_list'
 
   get 'home', to: 'pages#home', as: 'home'
   get 'inside', to: 'pages#inside', as: 'inside'
