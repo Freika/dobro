@@ -19,10 +19,6 @@
 //= require common
 
 $(document).ready(function(){
-  $('.announcement .remove').click(function() {
-    $(this).parent('div').remove();
-  });
-
   $('#post_created_at').datepicker({
     todayBtn: "linked",
     clearBtn: true,

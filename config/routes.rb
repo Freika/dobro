@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'base#index'
     resources :users, only: [:edit]
-    resources :announcements
   end
 end
