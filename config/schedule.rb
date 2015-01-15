@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, at: '3pm' do
-  set :environment, 'production'
+  environment: 'production'
   rake user_mailer:daily_remind
 end
