@@ -41,6 +41,7 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'guard-rspec', require: false
+  gem "letter_opener"
 end
 
 group :production do
