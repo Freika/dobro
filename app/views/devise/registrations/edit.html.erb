@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6 ">
+  <div class="col-sm-8 ">
     <h2>Редактирование настроек</h2>
 
     <%= form_for(resource, :as => resource_name,
@@ -11,7 +11,7 @@
       <div class="form-group">
         <%= f.label :email %>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <%= f.email_field :email, :autofocus => true, class: "form-control" %>
           </div>
         </div>
@@ -20,7 +20,7 @@
       <div class="form-group">
         <%= f.label 'Часовой пояс' %>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <%= f.time_zone_select :time_zone %>
           </div>
         </div>
@@ -28,7 +28,7 @@
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-8">
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         </div>
       </div>
@@ -37,7 +37,7 @@
       <div class="form-group">
             <%= f.label 'Пароль' %> <i><small>(Оставьте пустым, если не хотите его менять)</small></i>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <%= f.password_field :password, :autocomplete => "off", class: "form-control" %>
           </div>
         </div>
@@ -46,7 +46,7 @@
       <div class="form-group">
             <%= f.label 'Подтверждение пароля' %>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
         </div>
@@ -55,14 +55,26 @@
       <div class="form-group">
             <%= f.label 'Текущий пароль' %> <i><small>(введите для подтверждения внесенных изменений)</small></i>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <%= f.password_field :current_password, class: "form-control" %>
           </div>
         </div>
       </div>
 
+      <div class="form-group">
+        <%= f.label 'Отправлять ежедневные напоминания о записях на почту?' %>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= label :remind_daily, 'Да' %>
+            <%= f.radio_button :remind_daily, true %>
+            <%= label :remind_daily, 'Нет' %>
+            <%= f.radio_button :remind_daily, false %>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-8">
           <%= f.submit "Сохранить", class: "btn btn-primary" %> - <%= link_to "Отменить", posts_path %>
         </div>
       </div>

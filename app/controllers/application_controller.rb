@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
       :password,
       :password_confirmation,
       :current_password,
-      :time_zone
+      :time_zone,
+      :remind_daily
       )
     }
   end

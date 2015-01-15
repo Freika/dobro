@@ -58,6 +58,7 @@ class Admin::UsersController < Admin::BaseController
     params.require(:user).permit(
     :username,
     :time_zone,
+    :remind_daily,
     :email,
     :password,
     :password_confirmation,

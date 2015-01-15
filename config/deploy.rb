@@ -11,6 +11,7 @@
 # Если вы используете другую систему управления зависимостями,
 # закомментируйте эту строку.
 require 'bundler/capistrano'
+require "whenever/capistrano"
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
@@ -46,6 +47,9 @@ set :application,     "dobro"
 # Сервер размещения проекта.
 set :deploy_server,   "phosphorus.locum.ru"
 
+# whenever
+set :whenever_command, 'RAILS_ENV=production rvm use 2.1.2 do bundle exec whenever'
+
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
 
@@ -80,6 +84,8 @@ set :scm,             :git
 set :repository,    "git@github.com:Freika/dobro.git"
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
+
+after 'deploy:update_code','whenever:update_crontab'
 
 before 'deploy:finalize_update', 'set_current_release'
 task :set_current_release, :roles => :app do

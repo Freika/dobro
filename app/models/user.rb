@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   friendly_id :friendify, use: :slugged
   has_many :posts
 
+  scope :daily_reminds_enabled, -> { where(remind_daily: true) }
+
   # necessary to override friendly_id reserved words
   def friendify
     if username.downcase == "admin"

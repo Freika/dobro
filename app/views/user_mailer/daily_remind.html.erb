@@ -4,12 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+    <h4>Привет, <%= @user.username.capitalize %>!</h4>
     <p>
-    <%= @user.email %>
-      You have successfully signed up to example.com,
+      В твоем профиле стоит галочка напротив настройки "Отправлять ежедневные напоминания о записях на почту?", поэтому тебе пришло это письмо :) Не забудь <strong><a href="http://days.frey.su/">сегодня написать</a></strong> о том, как прошел твой день, это очень-очень важно, если ты хочешь контролировать свою жизнь и становиться лучше.
     </p>
-    <p>
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+    <p>Хорошего дня!</p>
+    <small>Твой дневник ;)</small>
   </body>
 </html>
