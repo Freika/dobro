@@ -59,6 +59,8 @@ class Admin::UsersController < Admin::BaseController
     :username,
     :time_zone,
     :remind_daily,
+    :remind_weekly,
+    :remind_monthly,
     :email,
     :password,
     :password_confirmation,
