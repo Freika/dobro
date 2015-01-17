@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   scope :daily_reminds_enabled, -> { where(remind_daily: true) }
   scope :weekly_reminds_enabled, -> { where(remind_weekly: true) }
-  scope :monthy_reminds_enabled, -> { where(remind_monthy: true) }
+  scope :monthly_reminds_enabled, -> { where(remind_monthly: true) }
 
   # necessary to override friendly_id reserved words
   def friendify
