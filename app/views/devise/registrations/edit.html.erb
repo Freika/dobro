@@ -73,6 +73,30 @@
         </div>
       </div>
 
+      <div class="form-group">
+        <%= f.label 'Напоминать о подведении итогов недели на почту?' %>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= label :remind_weekly, 'Да' %>
+            <%= f.radio_button :remind_weekly, true %>
+            <%= label :remind_weekly, 'Нет' %>
+            <%= f.radio_button :remind_weekly, false %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label 'Напоминать о подведении итогов месяца на почту?' %>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= label :remind_monthly, 'Да' %>
+            <%= f.radio_button :remind_monthly, true %>
+            <%= label :remind_monthly, 'Нет' %>
+            <%= f.radio_button :remind_monthly, false %>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-sm-8">
           <%= f.submit "Сохранить", class: "btn btn-primary" %> - <%= link_to "Отменить", posts_path %>

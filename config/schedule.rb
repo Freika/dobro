@@ -22,3 +22,11 @@
 every 1.day, at: '3pm' do
   rake 'user_mailer:daily_remind'
 end
+
+every :sunday, at: '3pm' do
+  rake 'user_mailer:weekly_remind'
+end
+
+every '* * 25,28 * *' do
+  rake 'user_mailer:monthly_remind'
+end
