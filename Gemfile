@@ -27,6 +27,7 @@ gem 'cancancan', '~> 1.9'
 gem 'autoprefixer-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'whenever'
+gem 'seed_dump'
 
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
